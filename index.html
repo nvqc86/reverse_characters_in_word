@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Reverse Characters In Every Word</title>
+	<script>
+		var reverseCharsInWord = function(inputString){
+			var result = "";
+			var reverseWord = "";
+			for (var i = 0; i < inputString.length; i++) {
+			   var char = inputString.substring(i, i + 1);
+			   if (i == inputString.length - 1) {
+			   	  result += char + reverseWord;
+			   } else if (char != " ") {
+			      reverseWord = char + reverseWord;
+			   } else {
+			   	  result += reverseWord + char;
+			   	  reverseWord = "";
+			   }
+			}
+			return result;
+		}
+
+		var testString = "I am  Cuong";
+		console.log(reverseCharsInWord(testString));
+	</script>
+</head>
+<body>
+
+</body>
+</html>
